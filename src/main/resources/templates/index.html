@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8"/>
+<title>Validation Test 2</title>
+</head>
+<body>
+   <h1>Testing custom validation with Binding Result</h1>
+      <form action="#" th:action="@{/submit}" th:object="${newUser}" method="post">
+          <p>E-mail: <input type="text" th:field="*{email}" />
+          <span th:if="${#fields.hasErrors('email')}" th:errors="*{email}">Error validating e-mail address</span></p>
+           <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>
+
+      </form>
+
+
+</body>
+</html>
